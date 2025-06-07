@@ -6,7 +6,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.*;
 import java.util.UUID;
@@ -19,9 +18,7 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Column(name = "email" , nullable = false)
@@ -29,6 +26,9 @@ public class User {
 
     @Column(name = "student_name" , nullable = false)
     private String name;
+
+    @Column(name = "password" , nullable = false)
+    private String password;
 
     @Column(name = "grade" , nullable = false)
     private int grade;
