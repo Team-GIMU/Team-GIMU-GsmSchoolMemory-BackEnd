@@ -16,7 +16,7 @@ public class LogoutService {
     private final UserUtil userUtil;
 
     public void logout() {
-        User user = userUtil.getCurrentUser();
+        User user = userUtil.currentUser();
         refreshTokenRepository.deleteById(user.getEmail());
     }
 }

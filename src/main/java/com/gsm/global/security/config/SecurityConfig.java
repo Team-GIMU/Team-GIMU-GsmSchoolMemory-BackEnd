@@ -54,6 +54,8 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                                 .requestMatchers(HttpMethod.PATCH, "/auth").permitAll()
 
+                                .requestMatchers("/board/**").authenticated()
+
                                 .anyRequest().authenticated()
                 )
 
