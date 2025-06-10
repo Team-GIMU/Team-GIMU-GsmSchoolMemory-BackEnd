@@ -56,6 +56,12 @@ public class SecurityConfig {
 
                                 .requestMatchers("/board/**").authenticated()
 
+                                .requestMatchers(HttpMethod.GET,"/notice").authenticated()
+                                .requestMatchers(HttpMethod.GET,"/notice/{id}").authenticated()
+                                .requestMatchers(HttpMethod.POST,"/notice").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.PATCH,"/notice/{id}").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.DELETE,"/notice/{id}").hasAnyAuthority("ROLE_ADMIN")
+
                                 .anyRequest().authenticated()
                 )
 

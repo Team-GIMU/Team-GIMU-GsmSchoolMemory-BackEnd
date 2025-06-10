@@ -27,7 +27,10 @@ public enum ErrorCode {
     MISMATCH_BOARD_AUTHOR(403,"내가 작성한 글이 아닙니다."),
 
     //BOARD RECORD
-    BOARD_RECORD_NOT_FOUND(404,"게시글의 기록을 찾을 수 없습니다.");
+    BOARD_RECORD_NOT_FOUND(404,"게시글의 기록을 찾을 수 없습니다."),
+
+    // NOTICE
+    NOTICE_NOT_FOUND(404,"공지글을 찾을 수 없습니다");
 
     private final int status;
     private final String message;
