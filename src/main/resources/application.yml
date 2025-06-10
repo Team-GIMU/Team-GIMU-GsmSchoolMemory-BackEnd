@@ -28,5 +28,21 @@ spring:
         format_sql: true
     show-sql: true
 
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USER}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth:
+          starttls:
+            enable: true
+
 jwt:
   secret: ${SECRET_KEY}
+
+discord:
+  webhook:
+    url: ${WEBHOOK_URL}
