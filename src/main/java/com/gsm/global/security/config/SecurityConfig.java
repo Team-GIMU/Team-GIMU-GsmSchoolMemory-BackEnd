@@ -62,6 +62,8 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PATCH,"/notice/{id}").hasAnyAuthority("ROLE_ADMIN")
                                 .requestMatchers(HttpMethod.DELETE,"/notice/{id}").hasAnyAuthority("ROLE_ADMIN")
 
+                                .requestMatchers("/role/**").hasAnyAuthority("ROLE_ADMIN")
+
                                 .anyRequest().authenticated()
                 )
 
