@@ -45,7 +45,15 @@ public class Comment{
     @LastModifiedDate
     private LocalDateTime editedDate;
 
+    @PrePersist
+    public void prePersist() {
+        if (createDate == null) {
+            createDate = LocalDateTime.now();
+        }
+    }
+
     public void update(EditCommentRequest editCommentRequest) {
         this.content = editCommentRequest.getContent();
+        editedDate = LocalDateTime.now();
     }
 }

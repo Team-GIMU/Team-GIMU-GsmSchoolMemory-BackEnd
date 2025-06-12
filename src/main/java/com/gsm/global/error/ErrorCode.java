@@ -36,7 +36,11 @@ public enum ErrorCode {
     NOTICE_NOT_FOUND(404,"공지글을 찾을 수 없습니다"),
 
     //INQUIRY
-    INQUIRY_NOT_FOUND(404,"문의 사항을 찾을 수 없습니다.");
+    INQUIRY_NOT_FOUND(404,"문의 사항을 찾을 수 없습니다."),
+
+    COMMENT_NOT_FOUND(404, "댓글을 찾을 수 없습니다."),
+
+    COMMENT_CONTENT_TOO_LONG(400, "댓글은 최대 100자까지 작성 가능합니다.");
 
     private final int status;
     private final String message;

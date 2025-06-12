@@ -1,7 +1,5 @@
 package com.gsm.domain.user.repository;
 
-
-
 import com.gsm.domain.user.entity.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,4 +11,5 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     Optional<User> findByEmail(String email);
 
     User findUserByEmail(String email);
+    Optional<User> findByName(String name);
 }
