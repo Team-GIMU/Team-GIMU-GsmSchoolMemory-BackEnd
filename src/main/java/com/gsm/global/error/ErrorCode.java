@@ -8,6 +8,9 @@ import lombok.Getter;
 @Getter
 public enum ErrorCode {
 
+    // SERVER ERROR
+    EMAIL_SEND_FAIL(500,"메일 발송에 실패했습니다"),
+
     // TOKEN
     TOKEN_NOT_VALID(401,"TOKEN_NOT_VALID"),
     TOKEN_IS_EXPIRATION(401,"TOKEN_IS_EXPIRATION"),
@@ -27,7 +30,13 @@ public enum ErrorCode {
     MISMATCH_BOARD_AUTHOR(403,"내가 작성한 글이 아닙니다."),
 
     //BOARD RECORD
-    BOARD_RECORD_NOT_FOUND(404,"게시글의 기록을 찾을 수 없습니다.");
+    BOARD_RECORD_NOT_FOUND(404,"게시글의 기록을 찾을 수 없습니다."),
+
+    // NOTICE
+    NOTICE_NOT_FOUND(404,"공지글을 찾을 수 없습니다"),
+
+    //INQUIRY
+    INQUIRY_NOT_FOUND(404,"문의 사항을 찾을 수 없습니다.");
 
     private final int status;
     private final String message;

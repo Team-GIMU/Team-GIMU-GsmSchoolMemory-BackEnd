@@ -56,6 +56,21 @@ public class SecurityConfig {
 
                                 .requestMatchers("/board/**").authenticated()
 
+                                .requestMatchers(HttpMethod.GET,"/notice").authenticated()
+                                .requestMatchers(HttpMethod.GET,"/notice/{id}").authenticated()
+                                .requestMatchers(HttpMethod.POST,"/notice").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.PATCH,"/notice/{id}").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.DELETE,"/notice/{id}").hasAnyAuthority("ROLE_ADMIN")
+
+                                .requestMatchers("/role/**").hasAnyAuthority("ROLE_ADMIN")
+
+                                .requestMatchers(HttpMethod.POST,"/inquiry").authenticated()
+                                .requestMatchers(HttpMethod.GET,"/inquiry/{id}").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/inquiry").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.PATCH,"/inquiry/approve/{id}").hasAnyAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.PATCH,"/inquiry/refusal/{id}").hasAnyAuthority("ROLE_ADMIN")
+
+
                                 .anyRequest().authenticated()
                 )
 
