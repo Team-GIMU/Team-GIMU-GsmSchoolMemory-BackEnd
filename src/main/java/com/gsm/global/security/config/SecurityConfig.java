@@ -70,6 +70,12 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PATCH,"/inquiry/approve/{id}").hasAnyAuthority("ROLE_ADMIN")
                                 .requestMatchers(HttpMethod.PATCH,"/inquiry/refusal/{id}").hasAnyAuthority("ROLE_ADMIN")
 
+                                .requestMatchers("/file").authenticated()
+
+                                .requestMatchers(HttpMethod.POST,"/comment").authenticated()
+                                .requestMatchers(HttpMethod.GET,"/comment/{boardId}").authenticated()
+                                .requestMatchers(HttpMethod.PATCH,"/comment/{commentId}").authenticated()
+                                .requestMatchers(HttpMethod.DELETE,"/comment/{commentId}").authenticated()
 
                                 .anyRequest().authenticated()
                 )

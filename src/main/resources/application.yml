@@ -46,3 +46,15 @@ jwt:
 discord:
   webhook:
     url: ${WEBHOOK_URL}
+
+cloud:
+  aws:
+    region:
+      static: ${AWS_REGION}
+    credentials:
+      access-key: ${AWS_ACCESS}
+      secret-key: ${AWS_SECRET}
+    s3:
+      bucket: ${AWS_BUCKET_NAME}
+    stack:
+      auto: false

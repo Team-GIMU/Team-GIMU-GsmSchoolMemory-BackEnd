@@ -29,18 +29,23 @@ public enum ErrorCode {
     BOARD_NOT_CHANGE(400,"달라진 수정사항이 없습니다."),
     MISMATCH_BOARD_AUTHOR(403,"내가 작성한 글이 아닙니다."),
 
-    //BOARD RECORD
+    // BOARD RECORD
     BOARD_RECORD_NOT_FOUND(404,"게시글의 기록을 찾을 수 없습니다."),
 
     // NOTICE
     NOTICE_NOT_FOUND(404,"공지글을 찾을 수 없습니다"),
 
-    //INQUIRY
+    // INQUIRY
     INQUIRY_NOT_FOUND(404,"문의 사항을 찾을 수 없습니다."),
 
+    // COMMENT
     COMMENT_NOT_FOUND(404, "댓글을 찾을 수 없습니다."),
+    COMMENT_CONTENT_TOO_LONG(400, "댓글은 최대 100자까지 작성 가능합니다."),
 
-    COMMENT_CONTENT_TOO_LONG(400, "댓글은 최대 100자까지 작성 가능합니다.");
+    // FILE
+    NOT_ALLOWED_FILE(400,"허용되지 않은 파일 형식입니다."),
+    FILE_UPLOAD_FAIL(500,"파일 업로드에 실패했습니다."),
+    INVALID_FORMAT_FILE(400, "잘못된 형식의 파일입니다.");;
 
     private final int status;
     private final String message;
